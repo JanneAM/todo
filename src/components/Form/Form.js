@@ -14,10 +14,13 @@ const Form = () => {
       e.preventDefault();
 
       dispatch(createItem(itemData));
+      console.log(itemData);
+      setItemData({title:'', message:''});
     }
 
     const clear = () => {
-      
+      setItemData({title:'', message:''});
+      console.log(itemData);
     }
 
     return (

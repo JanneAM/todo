@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useEffect } from 'react';
 import { Grid, CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
@@ -6,11 +6,10 @@ import Item from './Item/Item';
 import useStyles from './styles';
 
 const Items = () => {
-    
-    const items = useSelector((state) =>state.items)
+    const items = useSelector((state) => state.items)
     const classes = useStyles();
 
-    console.log(items);
+    
 
     return (
         !items.length ? <CircularProgress  /> : (

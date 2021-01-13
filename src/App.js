@@ -1,20 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 import { getItems } from './actions/items';
 import Items from './components/Items/Items';
 import Form from './components/Form/Form';
 import useStyles from './syles';
-
+import { useSelector } from 'react-redux';
 
 const App = () => {
     const classes = useStyles();
+    const items = useSelector((state) => state.items)
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getItems());
-    }, [dispatch])
+    }, [items, dispatch])
 
     return (
         <Container maxWidth="lg">
