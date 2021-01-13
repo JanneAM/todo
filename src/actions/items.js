@@ -20,8 +20,6 @@ export const createItem = (item) => async (dispatch) =>{
     }
 }
 
-<<<<<<< HEAD
-=======
 export const deleteItem = (id) => async (dispatch) => {
     try {
         await api.deleteItem(id);
@@ -32,16 +30,11 @@ export const deleteItem = (id) => async (dispatch) => {
     }
 }
 
->>>>>>> check-item-done
 export const checkItemDone = (id, item) => async (dispatch) => {
     try {
         const { data } = await api.checkItemDone(id, item);
 
-<<<<<<< HEAD
-        dispatch({ type: 'CHECK_DONE', payload: data });
-=======
         dispatch({ type:'CHECK_DONE', payload: data });
->>>>>>> check-item-done
     } catch (error) {
         console.log(error);
     }

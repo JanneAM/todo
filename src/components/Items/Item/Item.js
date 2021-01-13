@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import moment from 'moment';
-import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';
-import { checkItemDone } from '../../../actions/items';
 
 import { Card, CardActions, CardContent, IconButton, Typography } from '@material-ui/core';
 import CheckBoxOutlineBlankRoundedIcon from '@material-ui/icons/CheckBoxOutlineBlankRounded';
