@@ -10,7 +10,7 @@ export const getItems = () => async (dispatch) => {
     }
 }
 
-export const createItem = () => async (dispatch) =>{
+export const createItem = (item) => async (dispatch) =>{
     try {
         const { data } = await api.createItem(item);
 
