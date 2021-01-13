@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
 
 import useStyles from './styles';
@@ -10,12 +10,17 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { useDispatch } from 'react-redux';
 
-import { deleteItem, checkItemDone } from '../../../actions/items';
+import { getItems, deleteItem, checkItemDone } from '../../../actions/items';
 
 const Item = ({ item }) => {
 
     const classes = useStyles();
     const dispatch = useDispatch();
+
+    const handleDelete = () => {
+        dispatch(deleteItem(item._id));
+        dispatch(getItems());
+    }
 
     return (
         <Card className={classes.card} width={1}>
@@ -32,7 +37,7 @@ const Item = ({ item }) => {
                 <Typography className={classes.text} variant="body2" gutterBottom>{item.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <IconButton style={{color:'black'}} size="small" onClick={()=>dispatch(deleteItem(item._id))}>
+                <IconButton style={{color:'black'}} size="small" onClick={()=>handleDelete()}>
                     <DeleteIcon fontSize="default" />
                 </IconButton>
             </CardActions>

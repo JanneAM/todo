@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import { useDispatch} from 'react-redux';
 
@@ -15,7 +15,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getItems());
-    }, [items, dispatch])
+    },[dispatch])
 
     return (
         <Container maxWidth="lg">
