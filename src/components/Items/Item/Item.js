@@ -7,10 +7,14 @@ import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
 import moment from 'moment';
 
+import { useDispatch } from 'react-redux';
+
+import { deleteItem } from '../../../actions/items';
+
 const Item = ({ item }) => {
 
     const classes = useStyles();
-
+    const dispatch = useDispatch();
 
 
     return (
@@ -28,7 +32,7 @@ const Item = ({ item }) => {
                 <Typography className={classes.text} variant="body2" gutterBottom>{item.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <IconButton style={{color:'black'}} size="small" onClick={()=>{}}>
+                <IconButton style={{color:'black'}} size="small" onClick={()=>dispatch(deleteItem(item._id))}>
                     <DeleteIcon fontSize="default" />
                 </IconButton>
             </CardActions>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 import { getItems } from './actions/items';
 import Items from './components/Items/Items';

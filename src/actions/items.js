@@ -19,3 +19,13 @@ export const createItem = (item) => async (dispatch) =>{
         console.log(error);
     }
 }
+
+export const deleteItem = (id) => async (dispatch) => {
+    try {
+        await api.deleteItem(id);
+
+        dispatch({ type: 'DELETE', payload: id});
+    } catch (error) {
+        console.log(error);
+    }
+}
