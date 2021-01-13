@@ -9,13 +9,12 @@ import moment from 'moment';
 
 import { useDispatch } from 'react-redux';
 
-import { deleteItem } from '../../../actions/items';
+import { deleteItem, checkItemDone } from '../../../actions/items';
 
 const Item = ({ item }) => {
 
     const classes = useStyles();
     const dispatch = useDispatch();
-
 
     return (
         <Card className={classes.card} width={1}>
@@ -24,7 +23,7 @@ const Item = ({ item }) => {
                 <Typography className={classes.text} variant="body2">{moment(item.createdAt).fromNow()}</Typography>
             </div>
             <CardContent className={classes.cardContent}>
-                <IconButton style={{color:'black'}} size="small" onClick={()=>{}}>
+                <IconButton style={{color:'black'}} size="small" onClick={() => dispatch(checkItemDone(item._id, !item.done ? {done:true} : {done:false}))}>
                     {!item.done 
                         ? (<CheckBoxOutlineBlankRoundedIcon fontSize="large" />)
                         : ((<CheckBoxOutlinedIcon fontSize="large" />))}

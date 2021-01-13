@@ -9,6 +9,8 @@ const Items = () => {
     const items = useSelector((state) => state.items)
     const classes = useStyles();
 
+    
+
     return (
         !items.length ? <CircularProgress  /> : (
             <Grid className={classes.mainContainer} container alignItems="stretch" spacing={3}>
