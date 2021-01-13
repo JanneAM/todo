@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+
 import useStyles from './styles';
 
 const Form = () => {
-
+    const [itemData, setItemData] = useState({ title:'',message:'' });
     const classes = useStyles();
 
+    const handleSubmit = () => {
+
+    }
+
+    const clear = () => {
+      
+    }
+
     return (
-        <div>
-          <h1>FORM</h1>  
-        </div>
+        <Paper className={classes.paper}>
+          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+            <Typography variant="h6">Add a Task</Typography>
+            <TextField name="title" variant="outlined" label="Title" fullWidth value={itemData.creator} onChange={(e)=> setItemData({ ...itemData, title: e.target.value })}/>
+            <TextField name="message" variant="outlined" label="Message" fullWidth value={itemData.creator} onChange={(e)=> setItemData({ ...itemData, message: e.target.value })}/>
+            <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Add</Button>
+            <Button variant="contained" color="secondary" size="large" onClick={clear} fullWidth>Clear</Button>
+          </form>
+        </Paper>
     );
 };
 
