@@ -21,18 +21,12 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
+    backgroundColor: 'lightblue',
+    padding: '1rem',
   },
-  overlay: {
-    position: 'absolute',
-    top: '20px',
-    left: '20px',
-    color: 'white',
-  },
-  overlay2: {
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
-    color: 'white',
+  cardContent:{
+    display: 'flex',
+    flexDirection: 'row',
   },
   grid: {
     display: 'flex',
@@ -42,12 +36,12 @@ export default makeStyles({
     justifyContent: 'space-between',
     margin: '20px',
   },
-  title: {
-    padding: '0 16px',
+  text: {
+    padding: '0 1rem',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
   },
 });

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
 import Item from './Item/Item';
@@ -11,11 +12,15 @@ const Items = () => {
     console.log(items);
 
     return (
-        <>
-            <h1>ITEMS</h1>
-            <Item/>
-            <Item/>
-        </>
+        !items.length ? <CircularProgress  /> : (
+            <Grid className={classes.mainContainer} container alignItems="stretch" spacing={3}>
+                {items.map((item) =>(
+                    <Grid key={item._id} item xs={12} sm={12}>
+                        <Item item={item} />
+                    </Grid>    
+                ))}
+            </Grid>
+        )
     );
 };
 

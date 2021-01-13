@@ -18,7 +18,7 @@ const App = () => {
 
     return (
         <Container maxWidth="lg">
-            <AppBar className={classes.AppBar} position="static" color="inherit">
+            <AppBar className={classes.appBar} position="static" color="inherit">
                 <Typography className={classes.heading} variant="h2" align="center">To-Do</Typography>
             </AppBar>
             <Grow in>
@@ -27,7 +27,7 @@ const App = () => {
                         <Grid item xs={12} sm={7}>
                             <Items />
                         </Grid>
-                        <Grid item xs={12} sm={7}>
+                        <Grid item xs={12} sm={4}>
                             <Form />
                         </Grid>
                     </Grid>
