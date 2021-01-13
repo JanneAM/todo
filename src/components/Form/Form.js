@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
 
 import useStyles from './styles';
+import { createItem } from '../../actions/items';
 
 const Form = () => {
     const [itemData, setItemData] = useState({ title:'',message:'' });
     const classes = useStyles();
+    const dispatch = useDispatch();
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+      e.preventDefault();
 
+      dispatch(createItem(itemData));
     }
 
     const clear = () => {
